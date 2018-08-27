@@ -102,3 +102,12 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+.idea/.name
+.idea/crawler.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+apks/s.apk
+.idea/dictionaries/wyj.xml
+

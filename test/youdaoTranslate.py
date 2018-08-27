@@ -4,7 +4,8 @@ from urllib import parse
 import json
 
 def youdaoTranslte(content):
-    #Request URL,http://fanyi.youdao.com/translate_o?smartresult=dict&smartresult=rule,delete _o
+    #Request URL,http://fanyi.youdao.com/translate_o?smartresult=dict&smartresult=rule
+    #need delete '_o' from the real request url
     Request_URL = 'http://fanyi.youdao.com/translate?smartresult=dict&smartresult=rule'
     #form data
     Form_Data = {}
@@ -51,5 +52,5 @@ def baiduTranslate(content):
     print("the translate result is:%s" % translate_results)
 
 if __name__ == "__main__":
-    #youdaoTranslte('猫')
-    baiduTranslate('猫')
+    youdaoTranslte('猫和狗')
+    baiduTranslate('我家养了一只猫')
