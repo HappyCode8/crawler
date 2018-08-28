@@ -48,8 +48,8 @@ def simulateLogin():
     head = {'User-Agnet': user_agent, 'Connection': 'keep-alive'}
     #login Form_Data information
     Login_Data = {}
-    Login_Data['password'] = 'wyj123456'
-    Login_Data['username'] = 'wyj123456'
+    Login_Data['password'] = 'yourpassword'
+    Login_Data['username'] = 'yourname'
 
     #convert to standard format
     logingpostdata = parse.urlencode(Login_Data).encode('utf-8')
