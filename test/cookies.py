@@ -41,30 +41,25 @@ def getCookiesFromTxt():
 
 def simulateLogin():
     #login url
-    login_url = 'http://www.jobbole.com/wp-admin/admin-ajax.php'
+    login_url = 'http://www.biqukan.com/user/login.php?action=login&usecookie=1&url=http://www.biqukan.com/'
     #User-Agent infromation
     user_agent = r'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36'
     #Headers information
     head = {'User-Agnet': user_agent, 'Connection': 'keep-alive'}
     #login Form_Data information
     Login_Data = {}
-    Login_Data['action'] = 'login:'
-    Login_Data['domain'] = 'bjtu.edu.cn'
-    Login_Data['locale'] = 'zh_CN'
-    Login_Data['nodetect'] = 'false'
-    Login_Data['password'] = '60362355'
-    Login_Data['uid'] = '17120483'
-    Login_Data['useSSL'] = 'true'
+    Login_Data['password'] = 'wyj123456'
+    Login_Data['username'] = 'wyj123456'
+
     #convert to standard format
     logingpostdata = parse.urlencode(Login_Data).encode('utf-8')
     cookie = cookiejar.CookieJar()
     cookie_support = request.HTTPCookieProcessor(cookie)
     opener = request.build_opener(cookie_support)
-    req1 = request.Request(url=login_url, data=logingpostdata, headers=head)
-
+    req = request.Request(url=login_url, data=logingpostdata, headers=head)
     try:
-        response1 = opener.open(req1)
-        html = response1.read().decode('utf-8')
+        response = opener.open(req)
+        html = response.read().decode('gbk')
         print (html)
 
     except error.URLError as e:

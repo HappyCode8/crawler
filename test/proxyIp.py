@@ -2,7 +2,9 @@
 from urllib import request
 
 def proxyIp():
+    #a website that can see your ip
     url = 'http://myip.kkcha.com/'
+    #from a proxy ip from http://www.xicidaili.com/
     proxy = {'http':'222.221.11.119:3128'}
     proxy_support = request.ProxyHandler(proxy)
     opener = request.build_opener(proxy_support)
