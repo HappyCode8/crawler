@@ -56,10 +56,14 @@ def simulateLogin():
     cookie = cookiejar.CookieJar()
     cookie_support = request.HTTPCookieProcessor(cookie)
     opener = request.build_opener(cookie_support)
-    req = request.Request(url=login_url, data=logingpostdata, headers=head)
+    req1 = request.Request(url=login_url, data=logingpostdata, headers=head)
+
+    data_url = 'http://www.biqukan.com/user/bookcase.php'
+    req2 = request.Request(url=data_url, headers=head)
     try:
-        response = opener.open(req)
-        html = response.read().decode('gbk')
+        response1 = opener.open(req1)
+        response2 = opener.open(req2)
+        html = response2.read().decode('gbk')
         print (html)
 
     except error.URLError as e:
