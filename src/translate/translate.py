@@ -46,11 +46,12 @@ def baiduTranslate(content):
     Form_data={'from':'zh','query':content,'to':'en'}
     data=parse.urlencode(Form_data).encode('utf-8')
     response=request.urlopen(Request_URL,data)
+    print (response)
     html=response.read().decode('utf-8')
     translate_results = json.loads(html)
     translate_results = translate_results['data'][0]['dst']
     print("the translate result is:%s" % translate_results)
 
 if __name__ == "__main__":
-    youdaoTranslte('猫和狗')
+    #youdaoTranslte('猫和狗')
     baiduTranslate('我家养了一只猫')
