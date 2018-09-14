@@ -111,3 +111,11 @@ venv.bak/
 apks/s.apk
 .idea/dictionaries/wyj.xml
 
+.idea/dictionaries/wyj.xml
+.idea/encodings.xml
+*.apk
+file/cookie.txt
+file/app.json
+src/app.json
+file/test.json
+src/downNovel/唐砖.txt
